@@ -76,7 +76,7 @@ public class Main {
                     3.Information Technology
                     """);
             System.out.print("""
-                    4.Electornic Engineering
+                    4.Electronic Engineering
                     5.Mechatronic Engineering
                     6.Mechanical Engineering
                     """);
@@ -96,7 +96,7 @@ public class Main {
             }else if(major==3){
                 output="Information Technology";
             }else if (major==4) {
-                output="Electornic Engineering";
+                output="Electronic Engineering";
             }else if (major==5) {
                 output="Mechatronic Engineering";
             }else if (major==6) {
@@ -119,8 +119,7 @@ public class Main {
                 NID = scan.nextLine();
 
                 System.out.print("\nNumber of Distinction Achieved in Matriculation: ");
-                int dis = 0 ;
-                dis = scan.nextInt();
+                scan.nextInt();
 
                 System.out.print("\nProvide your Total Marks: ");
                 int mark;
@@ -128,8 +127,9 @@ public class Main {
 
                 System.out.print("\nYear to attend: ");
                 scan.nextLine();
-                String yearta;
-                yearta = scan.nextLine();
+                String yeartoattend;
+                yeartoattend = scan.nextLine();
+
 
 
                 System.out.println("\nYou need to choose at least one of these: 1,2,3,4,5\n");
@@ -165,7 +165,7 @@ public class Main {
                     default -> System.out.println("Please select just only one number out of them!");
                 }
 
-                System.out.println(name+", your registration is successfully recorded! You has officially become "+yearta+" Student of UoK !");
+                System.out.println(name+", your registration is successfully recorded! You has officially become "+yeartoattend+" Student of UoK !");
 
                 try{
                     FileWriter fw = new FileWriter("student registration.txt");
@@ -181,7 +181,7 @@ public class Main {
                     fw.write("\n\n");
 
                     fw.write("NID Number: " + NID + "\n"+"Student Name: "+name+"\n");
-                    fw.write("Chosen Major: " + output +"\n"+"Academic Record: "+mark+"\n"+"Designated Year: "+yearta+"\n");
+                    fw.write("Chosen Major: " + output +"\n"+"Academic Record: "+mark+"\n"+"Designated Year: "+yeartoattend+"\n");
                     fw.write("Chosen Package: " + outputf + "," +"\t"+"Amount: "+value+"Ks"+"\n");
 
                     fw.close();
@@ -196,7 +196,7 @@ public class Main {
                 System.out.println("//Output//");
                 getHyphen();
                 System.out.println("\nStudent Name"+"\t"+"NID Number"+"\t"+"Chosen Major"+"\t"+"Total Marks"+"\t"+"Chosen Package"+"\t\t"+"Designated Year"+"\t\t"+"Amount");
-                System.out.println(name+"\t"+NID+"\t"+output+"\t"+mark+"\t"+outputf+"\t\t"+yearta+"\t\t"+value+"Ks");
+                System.out.println(name+"\t"+NID+"\t"+output+"\t"+mark+"\t"+outputf+"\t\t"+yeartoattend+"\t\t"+value+"Ks");
                 getHyphen();
 
                 System.out.println();
@@ -207,8 +207,7 @@ public class Main {
             else{
                 System.out.println("Last Attended Year: ");
                 scan.nextLine();
-                String year = "" ;
-                year=scan.nextLine();
+                scan.nextLine();
 
                 System.out.println("Last Academic Record(Total Marks): ");
                 int last;
