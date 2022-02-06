@@ -25,10 +25,10 @@ public class Main {
         char ans;
         String repeat;
         do{
-            getHypen();
-            System.out.println("\nWelcome to UoK Student Registration !\n");
-            System.out.println("This is 4 years bachelor degree program. After that, you'll be given Bachelor's degree by UoK.");
-            getHypen();
+            getHyphen();
+            System.out.println("\nWelcome to UoK Student Registration !");
+            System.out.println("\nThis is 4 years bachelor degree program. After that, you'll be given Bachelor's degree by UoK.");
+            getHyphen();
             Scanner scan = new Scanner(System.in);
             String name;
             System.out.print("\nEnter your name: ");
@@ -80,7 +80,10 @@ public class Main {
                     5.Mechatronic Engineering
                     6.Mechanical Engineering
                     """);
-            System.out.println("7.Electrical Power Engineering\n"+"8.Chemical Engineering\n"+"9.Petroleum Engineering");
+            System.out.println("""
+                    7.Electrical Power Engineering
+                    8.Chemical Engineering
+                    9.Petroleum Engineering""");
 
             int major;
             String output;
@@ -125,12 +128,12 @@ public class Main {
 
                 System.out.print("\nYear to attend: ");
                 scan.nextLine();
-                String yearta = "" ;
+                String yearta;
                 yearta = scan.nextLine();
 
 
                 System.out.println("\nYou need to choose at least one of these: 1,2,3,4,5\n");
-                System.out.println("1. Univerisity fee (*MUST) 35000Ks for one semester");
+                System.out.println("1. University fee (*MUST) 35000Ks for one semester");
                 System.out.println("2. Material fees (*Optional) 100000Ks for one semester");
                 System.out.println("3. Shuttle Service fares (*Optional) 80000Ks for one semester");
                 System.out.println("4. Fees that cover all (Package A) 215000Ks");
@@ -140,7 +143,7 @@ public class Main {
                 String outputf = "";
                 switch (paytype) {
                     case 1 -> {
-                        outputf = "Univerisity fee";
+                        outputf = "University fee";
                         value = 35000;
                     }
                     case 2 -> {
@@ -162,7 +165,7 @@ public class Main {
                     default -> System.out.println("Please select just only one number out of them!");
                 }
 
-                System.out.println(name+", your registration is sucessfully recorded! You has officially become "+yearta+" Student of UoK !");
+                System.out.println(name+", your registration is successfully recorded! You has officially become "+yearta+" Student of UoK !");
 
                 try{
                     FileWriter fw = new FileWriter("student registration.txt");
@@ -181,25 +184,24 @@ public class Main {
                     fw.write("Chosen Major: " + output +"\n"+"Academic Record: "+mark+"\n"+"Designated Year: "+yearta+"\n");
                     fw.write("Chosen Package: " + outputf + "," +"\t"+"Amount: "+value+"Ks"+"\n");
 
-
                     fw.close();
 
-                    System.out.println("Thanks for your time!");
-                    getHypen();
+                    System.out.println("\nThanks for your time!");
+                    getHyphen();
 
                 }catch(IOException e){
                     System.out.println(e);
                 }
 
                 System.out.println("//Output//");
-                getHypen();
-                System.out.println("Student Name"+"\t"+"NID Number"+"\t"+"Chosen Major"+"\t"+"Total Marks"+"\t"+"Chosen Package"+"\t\t"+"Designated Year"+"\t\t"+"Amount");
+                getHyphen();
+                System.out.println("\nStudent Name"+"\t"+"NID Number"+"\t"+"Chosen Major"+"\t"+"Total Marks"+"\t"+"Chosen Package"+"\t\t"+"Designated Year"+"\t\t"+"Amount");
                 System.out.println(name+"\t"+NID+"\t"+output+"\t"+mark+"\t"+outputf+"\t\t"+yearta+"\t\t"+value+"Ks");
-                getHypen();
+                getHyphen();
 
                 System.out.println();
 
-                System.out.println("Do you want to restart registration again? [Y/N]");
+                System.out.println("\nDo you want to restart registration again? [Y/N]");
                 repeat = scan.next();
             }
             else{
@@ -209,7 +211,7 @@ public class Main {
                 year=scan.nextLine();
 
                 System.out.println("Last Academic Record(Total Marks): ");
-                int last = 0 ;
+                int last;
                 last=scan.nextInt();
 
                 System.out.println("Last Roll Number: ");
@@ -218,17 +220,17 @@ public class Main {
 
                 System.out.println("Designated Year to attend: ");
                 // scan.nextLine();
-                String dyear = "" ;
+                String designatedYear;
                 scan.nextLine();
-                dyear=scan.nextLine();
+                designatedYear=scan.nextLine();
 
-                System.out.println("You need to choose at least one of these: 1,2,3,4,5");
-                System.out.println("1. Univerisity fee (*MUST) 35000Ks for one semester");
+                System.out.println("\nYou need to choose at least one of these: 1,2,3,4,5");
+                System.out.println("1. University fee (*MUST) 35000Ks for one semester");
                 System.out.println("2. Material fees (*Optional) 100000Ks for one semester");
                 System.out.println("3. Shuttle Service fares (*Optional) 80000Ks for one semester");
                 System.out.println("4. Fees that cover all (Package A) 215000Ks");
                 System.out.println("5. Fees that only cover 1 & 3 (Package B) 115000Ks");
-                int paytype = 0 ;
+                int paytype;
                 paytype = scan.nextInt();
                 String outputf = "";
 
@@ -257,8 +259,7 @@ public class Main {
                         System.out.println("Please select just only one number out of them!");
                 }
 
-
-                System.out.println(name+" , your registration is sucessfully recorded! You has officially become a "+dyear+" Student !");
+                System.out.println(name+" , your registration is successfully recorded! You has officially become a "+designatedYear+" Student !");
 
                 try{
                     FileWriter fw = new FileWriter("student registration.txt");
@@ -274,24 +275,24 @@ public class Main {
                     fw.write("\n\n");
 
                     fw.write("Student ID: " + id + "\n"+"Student Name: "+name+"\n");
-                    fw.write("Chosen Major: " + output +"\n"+"Academic Record: "+last+"\n"+"Designated Year: "+dyear+"\n");
+                    fw.write("Chosen Major: " + output +"\n"+"Academic Record: "+last+"\n"+"Designated Year: "+designatedYear+"\n");
                     fw.write("Chosen Package: " + outputf + "," +"\t"+"Amount: "+value+"Ks"+"\n");
 
 
                     fw.close();
 
                     System.out.println("Thanks for your time!");
-                    getHypen();
+                    getHyphen();
 
                 }catch(IOException e){
                     System.out.println(e);
                 }
 
                 System.out.println("//Output//");
-                getHypen();
+                getHyphen();
                 System.out.println("Student Name"+"\t"+"Student ID"+"\t"+"Chosen Major"+"\t"+"Last Academic Record"+"\t"+"Chosen Package"+"\t"+"Designated Year"+"\t"+"Amount");
-                System.out.println(name+"\t"+id+"\t\t"+output+"\t"+last+"\t\t"+outputf+"\t"+dyear+"\t"+value+" Ks");
-                getHypen();
+                System.out.println(name+"\t"+id+"\t\t"+output+"\t"+last+"\t\t"+outputf+"\t"+designatedYear+"\t"+value+" Ks");
+                getHyphen();
 
                 System.out.println();
 
@@ -315,7 +316,7 @@ public class Main {
         }
 
     }
-    public static void getHypen(){
+    public static void getHyphen(){
 
         int x;
         System.out.println("\n");

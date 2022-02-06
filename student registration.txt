@@ -1,0 +1,11 @@
+=== Student Registration Form===
+
+DATE: 06(Sun)/02(Feb)/2022
+TIME: 08:42:51 AM
+
+Student ID: 12123
+Student Name: Alain Herve
+Chosen Major: Civil Engineering
+Academic Record: 2331
+Designated Year: 333
+Chosen Package: Univerisity fee,	Amount: 35000Ks
