@@ -1,30 +1,28 @@
+/*
+ * File name student.java 
+ */
+
+
 package com.regs;
 
 public class student extends person {
-    /* Student properties */
     private String rollNumber;
-    private String name;
-    private String standard;
     private int totalMarks;
-
-    //default constructor
-    public void Student(){
-    }
+    private int standard;
 
     /*
      * overloaded constructor to set all
      * student object properties at once
      */
 
-    public Student(String rollNumber, String name, String standard, int totalMarks){
-
-        /*
-         * this.variable_name always refer to class level properties
-         */
-
+    public Student(String name, String address, String rollNumber, int number, int totalMarks){
         //set object properties from the arguments/parameters
+
         this.rollNumber = rollNumber;
+	this.address = address;
+	this.number = number;
         this.name = name;
+	this.fullname = firstName + lastName;
         this.standard = standard;
         this.totalMarks = totalMarks;
     }

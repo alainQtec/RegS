@@ -1,12 +1,21 @@
-package com.regs;
+/*
+ * File name person.java 
+ */
+
+package com.alainqtec.registrationSystem;
 
 public class person {
 
-    private final String firstName = null;
-    private final String lastName  = null;
+    private String firstName;
+    private String lastName;
+    // private String address;
+    private String number;
+    private String dateOfBirth;
 
-    public person() {
+    public String toString() {
+        return firstName + "" + lastName;
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -14,6 +23,14 @@ public class person {
 
     public String getLastName() {
         return lastName;
+    }
+    
+    public String getNumber(){
+	return number;
+    }
+
+    public String getDateOfBirth(){
+	return dateOfBirth;
     }
 
     public boolean equals(Object o) {
@@ -29,8 +46,10 @@ public class person {
         return result;
     }
 
-    public String toString() {
-        return "Person(" + firstName + "," + lastName + ")";
+    public person(String name, String address, int number){
+	//this.name = firstName + lastName;
+	this.address = address;
+	//this.number = number;
     }
 
 }
